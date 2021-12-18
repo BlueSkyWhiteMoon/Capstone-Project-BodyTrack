@@ -1,0 +1,89 @@
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+  --margin-verical: 5px;
+  --margin-horizontal: 5px;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.2fr 1.6fr 0.5fr 0.5fr;
+  grid-template-areas:
+    'navStart navStart navStart' 'main main main'
+    'frühstück mittagessen abendessen' 'snacks snacks snacks'
+    'training training training';
+  grid-gap: 0.2rem;
+}
+
+.navStart {
+  background: #a7ffeb;
+  grid-area: navStart;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  margin-bottom: 5px;
+}
+
+main {
+  background: #84ffff;
+  grid-area: main;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  margin: var(--margin-verical) var(--margin-horizontal);
+}
+
+#frühstück {
+  background: #6fffda;
+  grid-area: frühstück;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  margin: var(--margin-verical) var(--margin-horizontal);
+}
+
+#mittagessen {
+  background: #6fffba;
+  grid-area: mittagessen;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  margin: var(--margin-verical) var(--margin-horizontal);
+}
+
+#abendessen {
+  background: #1de9b6;
+  grid-area: abendessen;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  margin: var(--margin-verical) var(--margin-horizontal);
+}
+
+#snacks {
+  background: #6fffe2;
+  grid-area: snacks;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  margin: var(--margin-verical) var(--margin-horizontal);
+}
+
+#training {
+  background: #6fffaa;
+  grid-area: training;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  margin: var(--margin-verical) var(--margin-horizontal);
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1.2fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+    grid-template-areas:
+      'navStart'
+      'main'
+      'frühstück'
+      'mittagessen'
+      'abendessen'
+      'snacks'
+      'training';
+  }
+}
