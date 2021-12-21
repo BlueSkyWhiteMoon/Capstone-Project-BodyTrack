@@ -1,15 +1,16 @@
 :root {
-  --main-radius: 5px;
+  --main-radius: 15px;
   --main-padding: 5px;
   --margin-verical: 5px;
   --margin-horizontal: 5px;
+  --font-size: 20px;
 }
 
 .container {
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 1.2fr 1.6fr 0.5fr 0.5fr;
+  grid-template-rows: 0.2fr 0.2fr 1.6fr 0.5fr 0.5fr;
   grid-template-areas:
     'navStart navStart navStart' 'main main main'
     'frühstück mittagessen abendessen' 'snacks snacks snacks'
@@ -18,65 +19,173 @@
 }
 
 .navStart {
-  background: #a7ffeb;
   grid-area: navStart;
-  border-radius: var(--main-radius);
   padding-top: var(--main-padding);
   margin-bottom: 5px;
+  border: solid;
+  border-width: thin;
 }
 
 main {
-  background: #84ffff;
   grid-area: main;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
-  margin: var(--margin-verical) var(--margin-horizontal);
+  margin: 20px;
+  border-style: solid;
+}
+
+.h1Meal {
+  grid-area: h1Meal;
+  border-bottom: solid;
+  border-width: thin;
+  border-color: gray;
+  font-size: var(--font-size);
+}
+
+.addedFood {
+  grid-area: addedFood;
+}
+
+.nahrungsmittelHinzu {
+  grid-area: nahrungsmittelHinzu;
+  border-top: solid;
+  border-width: thin;
+  font-size: var(--font-size);
+}
+
+.rechnung {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.h2Main {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  border-top: solid;
+  border-width: thin;
 }
 
 #frühstück {
-  background: #6fffda;
+  display: inline-flex;
+  box-sizing: border-box;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.2s;
+  cursor: pointer;
   grid-area: frühstück;
+  border: solid;
+  border-width: thin;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
   margin: var(--margin-verical) var(--margin-horizontal);
+  display: grid;
+  grid-template-rows: 0.1fr 1fr 0.15fr;
+  grid-template-areas: 'h1Meal' 'addedFood' 'nahrungsmittelHinzu';
+}
+
+#frühstück:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }
 
 #mittagessen {
-  background: #6fffba;
+  box-sizing: border-box;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.2s;
+  cursor: pointer;
   grid-area: mittagessen;
+  border: solid;
+  border-width: thin;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
   margin: var(--margin-verical) var(--margin-horizontal);
+  display: grid;
+  grid-template-rows: 0.1fr 1fr 0.15fr;
+  grid-template-areas: 'h1Meal' 'addedFood' 'nahrungsmittelHinzu';
+}
+
+#mittagessen:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }
 
 #abendessen {
-  background: #1de9b6;
+  box-sizing: border-box;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.2s;
+  cursor: pointer;
   grid-area: abendessen;
+  border: solid;
+  border-width: thin;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
   margin: var(--margin-verical) var(--margin-horizontal);
+  display: grid;
+  grid-template-rows: 0.1fr 1fr 0.15fr;
+  grid-template-areas: 'h1Meal' 'addedFood' 'nahrungsmittelHinzu';
+  font-size: 10px;
+}
+
+#abendessen:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }
 
 #snacks {
-  background: #6fffe2;
+  box-sizing: border-box;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.2s;
+  cursor: pointer;
   grid-area: snacks;
+  border: solid;
+  border-width: thin;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
   margin: var(--margin-verical) var(--margin-horizontal);
+  display: grid;
+  grid-template-rows: 0.1fr 1fr 0.15fr;
+  grid-template-areas: 'h1Meal' 'addedFood' 'nahrungsmittelHinzu';
+  font-size: 10px;
+}
+
+#snacks:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }
 
 #training {
-  background: #6fffaa;
+  box-sizing: border-box;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.2s;
+  cursor: pointer;
   grid-area: training;
+  border: solid;
+  border-width: thin;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
   margin: var(--margin-verical) var(--margin-horizontal);
+  display: grid;
+  grid-template-rows: 0.1fr 1fr 0.15fr;
+  grid-template-areas: 'h1Meal' 'addedFood' 'nahrungsmittelHinzu';
+  font-size: 10px;
+}
+
+#training:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }
 
 @media only screen and (max-width: 550px) {
   .container {
+    grid-gap: 20px;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1.2fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+    grid-template-rows: 1.5fr 2.2fr 2.5fr 2.5fr 2.5fr 2.5fr 2.5fr;
     grid-template-areas:
       'navStart'
       'main'
